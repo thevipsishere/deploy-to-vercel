@@ -38,19 +38,17 @@ jobs:
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
   test-e2e:
-   name: Test (e2e)
-   needs: [deploy-preview]
-   runs-on: ubuntu-latest
-   steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-    - run: npm install  # This installs all dependencies, including Playwright
-    - run: npx playwright install --with-deps  # This installs Playwright's browsers
-    - run: npx playwright --version  # Verify Playwright installation (optional)
-    - run: npm run test-e2e  # Run the e2e tests
-
+    name: test(app)
+    needs: [deploy-preview]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm install
+      - run: npm run test-e2e
       
   deploy-production:
     name: Deploy (Production)
