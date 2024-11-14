@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest" // Updated to run Jest instead of Playwright
+    "test": "jest" 
   },
   "dependencies": {
     "@types/node": "18.15.11",
