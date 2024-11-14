@@ -46,9 +46,11 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: '18'
-    - run: npm install
-    - run: npx playwright install --with-deps
-    - run: npm run test-e2e
+    - run: npm install  # This installs all dependencies, including Playwright
+    - run: npx playwright install --with-deps  # This installs Playwright's browsers
+    - run: npx playwright --version  # Verify Playwright installation (optional)
+    - run: npm run test-e2e  # Run the e2e tests
+
       
   deploy-production:
     name: Deploy (Production)
