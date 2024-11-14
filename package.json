@@ -5,10 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 3000", 
+    "start": "next start",
     "lint": "next lint",
-    "test": "npm run test-cypress",
-    "test-cypress": "cypress run"
+    "test-e2e": "cypress run" // Updated script to use Cypress
   },
   "dependencies": {
     "@types/node": "18.15.11",
@@ -21,17 +20,7 @@
     "react-dom": "18.2.0",
     "typescript": "5.0.3"
   },
-  "scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start -p 3000",
-  "lint": "next lint",
-  "test": "npm run test-cypress",
-  "test-cypress": "cypress run",
-  "cy:test": "npm start & npx wait-on http://localhost:3000 && npm run test-cypress"
-},
-
   "devDependencies": {
-    "cypress": "^12.5.0"
+    "cypress": "^12.0.0" // Added Cypress as a dev dependency
   }
 }
