@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "npm run test-cypress",  // Runs Cypress end-to-end tests
+    "test": "npm run test-cypress", 
     "test-cypress": "cypress run"
   },
   "dependencies": {
