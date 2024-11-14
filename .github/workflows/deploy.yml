@@ -24,8 +24,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: npm install
+      - name: Install Playwright Browsers
+        run: npx playwright install  # Installs required browsers
       - name: Install Playwright Dependencies
-        run: npx playwright install-deps  # Installs required dependencies for Playwright
+        run: npx playwright install-deps  # Installs system dependencies for Playwright
       - run: npm run test # Runs Playwright end-to-end tests
 
   build: 
