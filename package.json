@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "npm run test-e2e",
-    "test-e2e": "playwright test"
+    "test": "npm run test-jest && npm run test-cypress",
+    "test-jest": "jest",       // Runs Jest for unit tests
+    "test-cypress": "cypress run" // Runs Cypress for e2e tests
   },
   "dependencies": {
     "@types/node": "18.15.11",
@@ -22,6 +23,8 @@
     "typescript": "5.0.3"
   },
   "devDependencies": {
-    "@playwright/test": "^1.31.1"
+    "cypress": "^12.5.0",      // Adds Cypress for e2e testing
+    "jest": "^29.5.0",         // Adds Jest for unit testing
+    "@types/jest": "^29.5.0"   // Jest types for TypeScript support, if needed
   }
 }
