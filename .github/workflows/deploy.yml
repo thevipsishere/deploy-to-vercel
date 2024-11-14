@@ -37,10 +37,20 @@ jobs:
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
       - name: Deploy Project Artifacts to Vercel
         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
-
+  test-e2e:
+    name: Test (e2e)
+    needs: [deploy-preview]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: npm install
+      - run: npx playwright install --with-deps
+      - run: npm run test-e2e
+      
   deploy-production:
     name: Deploy (Production)
-    needs: [deploy-preview]
+    needs: [test-e2e]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
