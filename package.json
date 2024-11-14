@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest" 
+    "test": "jest"
   },
   "dependencies": {
     "@types/node": "18.15.11",
@@ -21,9 +21,6 @@
     "typescript": "5.0.3"
   },
   "devDependencies": {
-    "jest": "^29.0.0", // Add Jest as a dev dependency
-    "@testing-library/react": "^14.0.0", // Optional: for React component testing
-    "@types/jest": "^29.0.0", // Optional: TypeScript support for Jest
-    "ts-jest": "^29.0.0" // Optional: for TypeScript support with Jest
-  }
-}
+    "jest": "^29.0.0",
+    "@testing-library/react": "^14.0.0",
+    "@types/jest": "^
